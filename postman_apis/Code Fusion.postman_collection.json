@@ -1,0 +1,487 @@
+{
+	"info": {
+		"_postman_id": "851a7f1f-ba04-40ca-a29d-c5f0f5e81fa8",
+		"name": "Code Fusion",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "SignIn",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\":\"sagar@gmail.com\",\n\t\"password\":\"rakesh1234\"\n\t\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3001/auth/signin",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"auth",
+						"signin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SignUp",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"full_name\":\"sagar\",\n\t\"username\":\"sagar@gmail.com\",\n\t\"password\":\"sagar123\",\n\t\"security_question\":\"What is your Favroite game ?\",\n\t\"security_question_answer\":\"cricket\"\n\t\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3001/auth/signup",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"auth",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Question",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"title\":\"Avengers Assemble\",\n\t\"description\":\"Addition N numbers. All submissions for this problem are available.Well known investigative reporter 'Kim Sherlock' Bumjun needs your help! Today, his mission is to sabotage the operations of the evil JSA. If the JSA is allowed to succeed, they will use the combined power of the WQS binary search and the UFDS to take over the world! But Kim doesn't know where the base is located. He knows that the base is on the highest peak of the Himalayan Mountains. He also knows the heights of each of the N mountains. Can you help Kim find the height of the mountain where the base is located?\",\n\t\"input\":\"First line will contain T, number of testcases. Then the testcases follow. The first line in each testcase contains one integer, N. The following N lines of each test case each contain one integer: the height of a new mountain.\",\n\t\"output\":\"For each testcase, output one line with one integer: the height of the tallest mountain for that test case.\",\n\t\"constraints\":\"1≤T≤10 1≤N≤100000 0≤ height of each mountain ≤109\",\n\t\"sample_input\":\"1\\n5\\n4\\n7\\n6\\n3\\n1\",\n\t\"sample_output\":\"25\",\n\t\"private_input\":[[1,2,3],[1,22,3]],\n\t\"private_output\":[[6],[26]],\n\t\"time_limit\":\"2\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3001/questions/create",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"questions",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_questions",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"page_number\":2,\n\t\"per_page\": 3\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3001/questions/get_questions",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"questions",
+						"get_questions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete_questions",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"question_id\":\"5e569f528a7925304ee5ed12\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/questions/delete_questions",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"questions",
+						"delete_questions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update_questions",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"question_id\":\"5e569a8236e9b02c708fca4b\",\n\t\"title\":\"Peak Finding\",\n\t\"description\":\"All submissions for this problem are available.Well known investigative reporter 'Kim Sherlock' Bumjun needs your help! Today, his mission is to sabotage the operations of the evil JSA. If the JSA is allowed to succeed, they will use the combined power of the WQS binary search and the UFDS to take over the world! But Kim doesn't know where the base is located. He knows that the base is on the highest peak of the Himalayan Mountains. He also knows the heights of each of the N mountains. Can you help Kim find the height of the mountain where the base is located?\",\n\t\"input\":\"First line will contain T, number of testcases. Then the testcases follow. The first line in each testcase contains one integer, N. The following N lines of each test case each contain one integer: the height of a new mountain.\",\n\t\"output\":\"For each testcase, output one line with one integer: the height of the tallest mountain for that test case.\",\n\t\"constraints\":\"1≤T≤10 1≤N≤100000 0≤ height of each mountain ≤109\",\n\t\"sample_input\":\"1\\n5\\n4\\n7\\n6\\n3\\n1\",\n\t\"sample_output\":\"7\",\n\t\"private_input\":[[1,2,3],[1,22,333]],\n\t\"private_output\":[[7],[10]],\n\t\"time_limit\":\"1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3001/questions/update_questions",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"questions",
+						"update_questions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Questions",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"_id\":\"5e5e8d899719335f137472d4\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3001/questions/search",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"questions",
+						"search"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3001/challenges/submit",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t \"challenge\": {\n        \"program_id\": \"5e647afef4763c16f25f014e\",\n        \"title\": \"Hard Cash\",\n        \"code\": \"A Java Code Goes Here\",\n        \"username\": \"rakesh@gmail.com\",\n        \"language_chosen\": \"Java\"\n      }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3001/challenges/submit",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"challenges",
+						"submit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "validate_username_security_question",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\":\"sagar@gmail.com\",\n\t\"security_question\":\"What is your Favroite game ?\",\n\t\"security_question_answer\":\"cricket\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3001/auth/validate_username_security_question",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"auth",
+						"validate_username_security_question"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3001/auth/update_new_password",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\":\"sagar@gmail.com\",\n\t\"password\":\"rakesh1234\",\n\t\"_id\":\"5e6b8d7ea170b41a3a75afeb\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3001/auth/update_new_password",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"auth",
+						"update_new_password"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_submitted_challenges",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3001/challenges/get_submitted_challenges",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"challenges",
+						"get_submitted_challenges"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "generate_result",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"_id\":\"5e7740dc69959f1556adea76\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3001/results/generate_result",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"results",
+						"generate_result"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "compile_program",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3001/challenges/compile_program",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"challenges",
+						"compile_program"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_result",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"program_id\":\"5e7740dc69959f1556adea76\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3001/results/get_result",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"results",
+						"get_result"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
