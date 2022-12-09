@@ -17,7 +17,7 @@
   "dependencies": {
     "axios": "^0.19.2",
     "body-parser": "^1.18.3",
-    "express": "^4.16.3",
+    "express": "^4.17.3",
     "mongoose": "^5.9.2",
     "compile-run": "^2.3.0"
   }
